@@ -1,7 +1,7 @@
 const fs = require('fs');
 
-let lagrange = () => {
-    let rawdata = fs.readFileSync('numbers.json');
+let lagrange = (filename) => {
+    let rawdata = fs.readFileSync(filename);
     let numbers = JSON.parse(rawdata);
 
     let x = numbers.x;
@@ -20,4 +20,5 @@ let lagrange = () => {
     return lagrangePolinome;
 }
 
-console.log("Answer is: " +lagrange());
+console.log("Answer is: " +lagrange("numbers.json"));
+console.log("Answer is: " +lagrange("numbers2.json"));
