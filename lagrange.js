@@ -1,9 +1,9 @@
 const fs = require('fs');
 
-let lagranzh = () => {
+let lagrange = () => {
     let rawdata = fs.readFileSync('numbers.json');
     let numbers = JSON.parse(rawdata);
-    console.log(numbers);
+
     let x = numbers.x;
     let y = numbers.y;
     let xF = numbers.xF;
@@ -20,4 +20,4 @@ let lagranzh = () => {
     return lagrangePolinome;
 }
 
-console.log(lagranzh());
+console.log("Answer is: " +lagrange());
