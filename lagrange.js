@@ -15,10 +15,12 @@ let lagrange = (filename) => {
             if (j === i) continue;
             basePolinome *= (xF - x[j])/(x[i] - x[j])
         }
-        lagrangePolinome += basePolinome * y[i];
+        let sisi = basePolinome * y[i];
+        console.log(sisi)
+        lagrangePolinome += sisi;
     }
     return lagrangePolinome;
 }
 
-console.log("Answer is: " +lagrange("numbers.json"));
-console.log("Answer is: " +lagrange("numbers2.json"));
+console.log("Відповідь на 1 задачу: " +lagrange("numbers.json"));
+console.log("Відповідь на 2 задачу: " +lagrange("numbers2.json"));
