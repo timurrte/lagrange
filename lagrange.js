@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 const numbers1 = {
     "xF": 0.235,
     "x": [0.11, 0.15, 0.21, 0.29, 0.35, 0.4],
@@ -17,17 +15,18 @@ let lagrange = (numbers) => {
     let x = numbers.x;
     let y = numbers.y;
     let xF = numbers.xF;
-    let lagrangePolinome = 0;
+    let lagrangePolinome = 0; 
 
     for (let i = 0; i < x.length; i++) {
         let basePolinome = 1;
         for (let j = 0; j < y.length; j++) {
             if (j === i) continue;
-            basePolinome *= (xF - x[j])/(x[i] - x[j])
+            basePolinome *= (xF - x[j])/(x[i] - x[j]) 
+            // обчислюємо базовий поліном для кожного j окрім поточного i
         }
-        let sisi = basePolinome * y[i];
-        console.log(sisi)
-        lagrangePolinome += sisi;
+        
+        lagrangePolinome += basePolinome * y[i];
+        // додаємо до остаточного значення поліному значення базового поліному помноженого на y
     }
     return lagrangePolinome;
 }
