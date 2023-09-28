@@ -1,8 +1,18 @@
 const fs = require('fs');
 
-let lagrange = (filename) => {
-    let rawdata = fs.readFileSync(filename);
-    let numbers = JSON.parse(rawdata);
+const numbers1 = {
+    "xF": 0.235,
+    "x": [0.11, 0.15, 0.21, 0.29, 0.35, 0.4],
+    "y": [9.065421, 6.61659, 4.69170, 3.35106, 2.7395, 2.36522]
+}
+
+const numbers2 = {
+        "xF": 1.4258,
+        "x": [1.415, 1.420, 1.425, 1.430, 1.435, 1.440],
+        "y": [0.888551, 0.889599, 0.890637, 0.891667, 0.892687, 0.893698]
+}
+
+let lagrange = (numbers) => {
 
     let x = numbers.x;
     let y = numbers.y;
@@ -22,5 +32,5 @@ let lagrange = (filename) => {
     return lagrangePolinome;
 }
 
-console.log("Відповідь на 1 задачу: " +lagrange("numbers.json"));
-console.log("Відповідь на 2 задачу: " +lagrange("numbers2.json"));
+console.log("Відповідь на 1 задачу: " +lagrange(numbers1));
+console.log("Відповідь на 2 задачу: " +lagrange(numbers2));
