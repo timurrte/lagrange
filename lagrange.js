@@ -31,5 +31,5 @@ let lagrange = (numbers) => {
     return lagrangePolinome;
 }
 
-console.log("Відповідь на 1 задачу: " +lagrange(numbers1));
-console.log("Відповідь на 2 задачу: " +lagrange(numbers2));
+console.log("Значення y в точці " + numbers1.xF  + ": " + lagrange(numbers1));
+console.log("Значення y в точці " + numbers2.xF  + ": " + lagrange(numbers2));
